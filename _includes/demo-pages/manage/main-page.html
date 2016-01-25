@@ -1,0 +1,206 @@
+<main class="main">
+
+    <form class="box box--page-section u-padding">
+
+        <h2 class="box__title box--page-section__title">Your public profile</h2>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="shortbio">Short bio:</label>
+
+            <input id="shortbio" class="input__input" type="text" placeholder="Aww snap, this user did not yet write their bio. If they did, it would show up here, you know.">
+
+        </div>
+
+        <div class="input">
+            <label for="uploadAvatar" class="input__label">Upload avatar:</label>
+
+            <ul class="list list--horizontal">
+                <li class="u-margin-right">
+                    <label for="uploadAvatar" class="button button--medium button--quiet">Browse</label>
+                </li>
+                <li class="jsUploadInputFilename">
+                    No file selected
+                </li>
+            </ul>
+
+            <input id="uploadAvatar" class="jsUploadInputHidden" type="file" style="display: none;"></input>
+        </div>
+
+        <ul class="list list--horizontal">
+            <li><button type="button" class="button button--medium button--loud">Save</button></li>
+        </ul>
+
+    </form>
+
+    <form class="box box--page-section u-padding u-flex-column">
+
+        <h2 class="box__title box--page-section__title">User preferences</h2>
+
+        <div class="input u-margin-bottom">
+            <label for="themeselect" class="input__label">Theme:</label>
+            <select id="themeselect" class="input__select">
+                <option>Light</option>
+                <option>Dark</option>
+                <option>High-contrast</option>
+            </select>
+        </div>
+
+        <div class="toggle u-margin-bottom">
+
+            <input class="toggle__checkbox-real" id="checkbox1" type="checkbox">
+
+            <label class="toggle__label" for="checkbox1">
+
+                <span class="toggle__checkbox-fake"></span>
+
+                <span>Disable custom subverse styles</span>
+
+            </label>
+        </div>
+
+        <div class="toggle u-margin-bottom">
+
+            <input class="toggle__checkbox-real" id="checkbox2" type="checkbox">
+
+            <label class="toggle__label" for="checkbox2">
+
+                <span class="toggle__checkbox-fake"></span>
+
+                <span>Open links in new tabs</span>
+
+            </label>
+        </div>
+
+        <div class="toggle u-margin-bottom">
+
+            <input class="toggle__checkbox-real" id="checkbox3" type="checkbox">
+
+            <label class="toggle__label" for="checkbox3">
+
+                <span class="toggle__checkbox-fake"></span>
+
+                <span>Display NSFW content</span>
+
+            </label>
+        </div>
+
+        <div class="toggle u-margin-bottom">
+
+            <input class="toggle__checkbox-real" id="checkbox4" type="checkbox">
+
+            <label class="toggle__label" for="checkbox4">
+
+                <span class="toggle__checkbox-fake"></span>
+
+                <span>Make my subscriptions public</span>
+
+            </label>
+        </div>
+
+
+        <ul class="list list--horizontal">
+            <li><button type="button" class="button button--medium button--loud">Save</button></li>
+        </ul>
+
+    </form>
+
+    <form class="box box--page-section u-padding">
+
+        <h2 class="box__title box--page-section__title">Account email</h2>
+
+        <div class="box__expository u-margin-bottom">
+            No email address is required to use Voat, however you may enter one for the purpose of password recovery.
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="email">Email address:</label>
+
+            <input id="email" class="input__input" type="text" value="">
+
+        </div>
+
+        <ul class="list list--horizontal">
+            <li><button type="button" class="button button--medium button--loud">Save</button></li>
+        </ul>
+
+    </form>
+
+    <form class="box box--page-section u-padding">
+
+        <h2 class="box__title box--page-section__title">Change your password</h2>
+
+        <div class="box__expository u-margin-bottom">
+            Your password must be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character, such as '?' or '%'.
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="currentpassword">Current password:</label>
+
+            <input id="currentpassword" class="input__input" type="password" value="">
+
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="newpassword">New password:</label>
+
+            <input id="newpassword" class="input__input" type="password" value="">
+
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="confirmnew">Confirm new password:</label>
+
+            <input id="confirmnew" class="input__input" type="password" value="">
+
+        </div>
+
+        <ul class="list list--horizontal">
+            <li><button type="button" class="button button--medium button--loud">Save</button></li>
+        </ul>
+
+    </form>
+
+    <form class="box box--page-section u-padding">
+
+        <h2 class="box__title box--page-section__title">Delete account</h2>
+
+        <div class="box__expository u-margin-bottom">
+            This will permanently remove all your submissions and comments from Voat. Your username will remain unavailable to register.
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="typedelete">Type DELETE:</label>
+
+            <input id="typedelete" class="input__input" type="text" value="">
+
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="retypedelete">Re-type DELETE:</label>
+
+            <input id="retypedelete" class="input__input" type="text" value="">
+
+        </div>
+
+        <div class="input u-margin-bottom">
+
+            <label class="input__label" for="delete_currentpassword">Current Password:</label>
+
+            <input id="delete_currentpassword" class="input__input" type="password" value="">
+
+        </div>
+
+        <ul class="list list--horizontal">
+            <li><button type="button" class="button button--medium button--serious">Delete</button></li>
+        </ul>
+
+    </form>
+
+</main>

@@ -1,0 +1,442 @@
+// TABLE OF CONTENTS ////////////
+
+    // Variables
+
+    // Base
+
+    // Layout
+        // launcher
+        // header
+        // footer
+
+    // Components
+        // box
+        // list
+        // input
+        // vote-arrows
+        // button
+        // toggle
+
+//////////////////////////////////
+
+
+
+// Variables
+
+$link-color: #00e;
+$link-color-hover: lighten($link-color, 15%);
+$link-color-visited: #551a8b;
+$link-color-visited-hover: lighten($link-color-visited, 15%);
+$header-color: black;
+$page-section-background: white;
+
+$upvote-color: #63C5FB;
+$downvote-color: #a08fff;
+$lightgray: transparentize(black, 0.93);
+$mediumgray: transparentize(black, 0.8);
+$darkgray: transparentize(black, 0.6);
+$red: #a00;
+$border-color: $mediumgray;
+$accent-color: steelblue;
+$accent-color-hover: darken($accent-color, 15%);
+
+$border: 1px solid $border-color;
+
+$body-background: #eee;
+$content-background: white;
+
+
+// Base
+
+body {
+    background: $body-background;
+}
+
+a {
+    color: $link-color;
+
+    &:hover {
+        color: $link-color-hover;
+    }
+
+    &:visited {
+        color: $link-color-visited;
+
+        &:hover {
+            color: $link-color-visited-hover;
+        }
+    }
+}
+
+table {
+
+}
+
+thead {
+    border-bottom: $border;
+}
+
+.username,
+.subverse {
+	font-family: "DejaVu Sans Mono";
+	font-style: normal;
+}
+
+
+// Layout
+
+
+
+.body_-modal-is-open > .body__backdrop {
+    background: transparentize(white, 0.1);
+}
+
+.body_-launcher-is-open {
+
+    .body__backdrop {
+        background: transparentize(white, 0.1);
+    }
+
+    .header__logo path {
+        fill: #eee;
+    }
+}
+
+.header {
+    background: $header-color;
+    color: white;
+
+    a:not(.button) {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: $upvote-color;
+        }
+    }
+}
+
+
+.launcher {
+    background: #333;
+    color: white;
+
+    &__input {
+        color: white;
+
+        &:focus {
+            border-color: #bbb !important;
+        }
+    }
+}
+
+
+
+
+
+.footer {
+    background: black;
+    color: white;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: $upvote-color;
+        }
+    }
+}
+
+
+// Components
+
+.box {
+
+    &__details {
+        color: #444;
+        font-style: italic;
+    }
+
+    &__expository {
+        border-left: 3px solid #aaa;
+        background: #f5f5f5;
+    }
+
+    &__thumbnail {
+        background: #111;
+    }
+
+    &--modal,
+    &--page-section {
+        background: $page-section-background;
+        border: $border;
+
+        &__title {
+            // border-bottom: $border;
+        }
+    }
+
+    &--subverse,
+    &--private-message,
+    &--submission {
+        border-bottom: $border;
+    }
+
+    &--submission {
+
+        &__thumbnail {
+            background: #333;
+        }
+
+        &__vote-bar {
+            background: $downvote-color;
+
+            > div {
+                background: $upvote-color;
+                border-bottom: 1px solid $page-section-background;
+            }
+        }
+    }
+
+    &--comment {
+        border-left: 2px solid $border-color;
+
+        &:hover {
+            border-color: #999;
+        }
+    }
+}
+
+.list {
+
+    &--tabs {
+        border-bottom: $border;
+    }
+}
+
+.input {
+
+    &__input,
+    &__select,
+    &__textarea {
+        background: none;
+        border: $border;
+
+        &:focus {
+            border-color: $accent-color;
+        }
+    }
+
+    &--checkbox,
+    &--radio {
+
+
+        &__fake-checkbox,
+        &__fake-radio {
+            border: 0.1rem solid $darkgray;
+
+            > div {
+                background: $accent-color;
+            }
+        }
+
+        &__label:hover {
+
+            &,
+            & > .input__fake-checkbox {
+
+                color: $accent-color;
+                border-color: $accent-color;
+            }
+        }
+
+        &__true-checkbox:focus {
+
+            ~ label {
+                color: $accent-color;
+
+                & > div {
+                    border-color: $accent-color;
+                }
+            }
+        }
+
+    }
+}
+
+.vote-arrows {
+    fill: transparentize(black, 0.6);
+
+    &__arrow--up:hover {
+        fill: $upvote-color;
+    }
+
+    &__arrow--down:hover {
+        fill: $downvote-color;
+    }
+
+    &__arrow--disabled {
+        &,
+        &:hover {
+            fill: #ddd;
+            cursor: not-allowed;
+            stroke: red !important;
+            stroke-width: 1px !important;
+
+        }
+    }
+}
+
+.button {
+
+    &--loud {
+
+        &,
+        &:visited {
+            background: $accent-color;
+            color: white;
+        }
+
+        &:hover,
+        &:visited:hover {
+            background: $accent-color-hover;
+            color: white;
+        }
+    }
+
+    &--quiet {
+
+        &,
+        &:visited {
+            background: $lightgray;
+            color: black;
+        }
+
+        &:hover,
+        &:visited:hover {
+            background: $accent-color-hover;
+            color: white;
+        }
+    }
+
+    &--launcher {
+        &,
+        &:visited {
+            color: black;
+        }
+
+        &:hover,
+        &:visited:hover {
+            background: $lightgray;
+            color: black;
+        }
+    }
+
+    &--serious {
+        background: $red;
+        color: white;
+
+        &:hover {
+            background: darken($red, 10%);
+        }
+    }
+
+    &--disabled {
+
+        &,
+        &:hover,
+        &:visited,
+        &:visited:hover {
+            background: #eee;
+            color: #333;
+            cursor: not-allowed;
+        }
+    }
+
+    &--tab {
+        &,
+        &:hover,
+        &:visited,
+        &:visited:hover {
+            color: black;
+        }
+
+        &--active {
+            border-bottom: 4px solid $accent-color;
+        }
+
+        &--inactive {
+
+            &:hover {
+                border-bottom: 4px solid $mediumgray;
+            }
+        }
+
+        &--disabled {
+            &,
+            &:hover,
+            &:visited,
+            &:visited:hover {
+                color: #777;
+                cursor: not-allowed;
+                border-color: transparent;
+            }
+        }
+    }
+
+    &--header {
+
+        svg {
+            fill: white;
+        }
+
+        &__number {
+            font-weight: bold;
+            background: gold;
+            color: $header-color;
+            border: 2px solid $header-color;
+        }
+    }
+
+    &--header:hover svg {
+        fill: $upvote-color;
+    }
+
+    &--formatting {
+        fill: #333;
+
+        &:hover {
+            fill: $accent-color;
+        }
+    }
+}
+
+.toggle {
+
+    &__checkbox-fake,
+    &__radio-fake {
+        border: 1px solid $darkgray;
+    }
+
+    &__checkbox-real,
+    &__radio-real {
+
+        &:hover + label,
+        &:focus + label {
+            color: $accent-color;
+
+            > .toggle__checkbox-fake {
+                border-color: $accent-color;
+            }
+        }
+
+        &:checked + label > .toggle__checkbox-fake,
+        &:checked + label > .toggle__radio-fake {
+            border-color: $accent-color;
+
+            &::before {
+                background: $accent-color;
+            }
+        }
+    }
+}

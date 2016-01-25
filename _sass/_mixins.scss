@@ -1,0 +1,45 @@
+// Prefixing mixins should be removed and Autoprefixer used instead.
+
+
+@mixin screen-768 {
+    @media screen and (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin screen-1024 {
+    @media screen and (min-width: 1023px) {
+        @content;
+    }
+}
+
+
+@mixin no-selection {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin no-placeholder {
+    &::-webkit-input-placeholder {
+       color: transparent;
+    }
+
+    &::-moz-placeholder {
+       color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+       color: transparent;
+    }
+}
+
+@mixin display--flex {
+    display: flex;
+}
+
+@mixin flex-reset {
+    // IE11 fix. This is already the default for non-shitty browsers.
+    flex: 0 1 auto;
+}

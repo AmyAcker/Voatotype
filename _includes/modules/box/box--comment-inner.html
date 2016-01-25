@@ -1,0 +1,28 @@
+<div class="u-flex-row">
+
+    {% if page.votable %}
+    {% include modules/vote-arrows/vote-arrows--comment.html %}
+    {% endif %}
+
+    <div class="box__main box--comment__main">
+
+        <div class="box__details box--comment__details">
+            <span class="u-hide-after-550"><a href="#" class="jsCollapseThisComment username">[-]</a> <a href="#" class="username">Username</a> [6-1] &bull; <time>2h</time></span>
+            <span class="u-hide-until-550"><a href="#" class="jsCollapseThisComment username">[-]</a> <a href="#" class="username">Username</a> 5 points [6-1], <time>2 hours ago</time></span>
+        </div>
+
+        <div class="box__body box--comment__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+        <ul class="list list--horizontal">
+            <li><a class="button button--small button--quiet">reply</a></li>
+            <li><a class="button button--small button--quiet">permalink</a></li>
+            <li><a class="button button--small button--quiet">save</a></li>
+            <li><a class="button button--small button--quiet">source</a></li>
+            <li><a class="button button--small button--quiet">report spam</a></li>
+        </ul>
+
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+$header-height: 5rem;
+$sidebar-width: 300px;
+$standard-spacing: 10px;
+
+// $screen-sizes creates appropriate utility classes.
+// Unfortunatly, Sass does not accept variables in mixins, so
+// these need to be adjusted manually in  _sass/_mixins.scss
+$screen-sizes: 360 550 768 1024;

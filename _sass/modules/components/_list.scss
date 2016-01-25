@@ -1,0 +1,49 @@
+$margin: 5px;
+
+.list {
+    list-style: none;
+    overflow: hidden;
+    flex: none;
+
+    &--horizontal,
+    &--formatting-buttons,
+    &--tabs {
+        @extend .u-flex-row;
+        flex-wrap: wrap;
+    }
+
+    &--horizontal {
+        align-items: center;
+
+        > li {
+            margin-top: $margin;
+            margin-right: $margin;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &--formatting-buttons {
+        height: 2.5rem;
+
+        > li {
+            margin-left: $margin;
+        }
+    }
+
+    &--tabs {
+        width: 100%;
+        padding: 0 10px;
+        align-items: baseline;
+    }
+
+    &--vertical {
+        @extend .u-flex-column;
+
+        > li + li {
+            margin-top: $margin * 2;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+<main class="main">
+
+    <div class="box box--page-section">
+
+        {% include modules/box/box--submission.html %}
+
+    </div>
+
+    <div class="box box--page-section u-padding">
+
+
+
+        {% include modules/list/list--formatting-buttons.html %}
+
+        <textarea class="input__textarea"></textarea>
+
+
+        <ul class="list list--horizontal">
+            <li><a href="" class="button button--medium button--loud">Submit comment</a></li>
+            <li><a href="" class="button button--medium button--quiet">Preview</a></li>
+        </ul>
+
+    </div>
+
+    <div class="box box--page-section u-padding-bottom">
+
+        <ul class="list list--tabs">
+            <li><a href="#" class="button button--tab button--tab--active">Top</a></li>
+            <li><a href="#" class="button button--tab button--tab--inactive">New</a></li>
+        </ul>
+
+        <div class="box box--comment">
+            {% include modules/box/box--comment-inner.html %}
+
+            <div class="box box--comment">
+                {% include modules/box/box--comment-inner.html %}
+
+                <div class="box box--comment">
+                    {% include modules/box/box--comment-inner.html %}
+
+                    <div class="box box--comment">
+                        {% include modules/box/box--comment-inner.html %}
+
+
+                    </div>
+                </div>
+                <div class="box box--comment">
+                    {% include modules/box/box--comment-inner.html %}
+
+
+                </div>
+            </div>
+            <div class="box box--comment">
+                {% include modules/box/box--comment-inner.html %}
+
+                <div class="box box--comment">
+                    {% include modules/box/box--comment-inner.html %}
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>

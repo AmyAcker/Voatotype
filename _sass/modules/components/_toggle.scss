@@ -1,0 +1,42 @@
+.toggle {
+    display: inline-block;
+
+    &__label {
+        @include no-selection;
+        @extend .u-flex-row;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    &__checkbox,
+    &__radio {
+
+        &-fake {
+            width: 2.4rem;
+            height: 2.4rem;
+            padding: 0.5rem;
+            margin-right: 10px;
+        }
+
+        &-real {
+            position: absolute;
+            left: -9999px;
+
+            &:checked + label > .toggle__checkbox,
+            &:checked + label > .toggle__radio {
+
+                &-fake::before {
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__radio-fake,
+    &__radio-fake::before {
+        border-radius: 50%;
+    }
+}

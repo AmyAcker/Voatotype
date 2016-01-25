@@ -1,0 +1,139 @@
+<style media="screen">
+    .box--submission__vote-bar {
+        margin-left: 10px;
+    }
+</style>
+
+
+<main class="main">
+
+    <section class="box box--page-section">
+
+        <ul class="list list--tabs">
+            <li><a class="button button--tab button--tab--active">Overview</a></li>
+            <li><a class="button button--tab button--tab--inactive">Submissions</a></li>
+            <li><a class="button button--tab button--tab--inactive">Comments</a></li>
+            <li class="u-flex-grow"></li>
+        </ul>
+
+        <div class="box u-margin-bottom">
+            <h2 class="box__title u-margin">
+                Highest-rated submissions:
+            </h2>
+            {% for i in (1..3) %}
+            {% include modules/box/box--submission.html %}
+            {% endfor %}
+        </div>
+
+        <div class="box u-margin-bottom">
+            <h2 class="box__title u-margin">
+                Lowest-rated submissions:
+            </h2>
+            {% for i in (1..3) %}
+            {% include modules/box/box--submission.html %}
+            {% endfor %}
+        </div>
+
+        <div class="box u-margin-bottom">
+            <h2 class="box__title u-margin">
+                Highest-rated comments:
+            </h2>
+            {% for i in (1..3) %}
+            {% include modules/box/box--comment.html %}
+            {% endfor %}
+        </div>
+
+        <div class="box u-margin-bottom">
+            <h2 class="box__title u-margin">
+                Lowest-rated comments:
+            </h2>
+            {% for i in (1..3) %}
+            {% include modules/box/box--comment.html %}
+            {% endfor %}
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="box u-padding">
+
+            <h2 class="box__title">Top subverses by submission count:</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>
+                            Subverse
+                        </th>
+                        <th>
+                            Submissions
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#">Announcements</a>
+                        </td>
+                        <td>
+                            82
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <a href="#">CustomizingVoat</a>
+                        </td>
+                        <td>
+                            58
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">Cashmere</a>
+                        </td>
+                        <td>
+                            54
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">BestSubInHistoryEver</a>
+                        </td>
+                        <td>
+                            49
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">Test</a>
+                        </td>
+                        <td>
+                            20
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+
+
+            </table>
+
+
+
+        </div> -->
+
+
+
+    </section>
+
+
+</main>

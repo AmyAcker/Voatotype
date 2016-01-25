@@ -1,0 +1,88 @@
+$button--small-height: 2.2rem;
+$button--medium-height: 3rem;
+$button--large-height: 3.7rem;
+$button--tab-height: 4.4rem;
+$button--formatting-height: 3.4rem;
+
+.button {
+    @include no-selection;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    width: auto;
+    flex: none;
+
+    > svg {
+        vertical-align: middle;
+        display: inline;
+    }
+
+    &__number {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.5rem;
+        padding: 0 0.3rem;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+    }
+
+    &--small {
+        font-size: 1.1rem;
+        padding: 0 0.8rem;
+        line-height: $button--small-height;
+        height: $button--small-height;
+        min-width: $button--small-height;
+    }
+
+    &--medium {
+        font-size: 1.2rem;
+        padding: 0 1.2rem;
+        line-height: $button--medium-height;
+        height: $button--medium-height;
+        min-width: $button--medium-height;
+    }
+
+    &--large {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        height: $button--large-height;
+        line-height: $button--large-height;
+        min-width: $button--large-height;
+    }
+
+    &--full-width {
+        width: 100%;
+        text-align: center;
+    }
+
+    &--tab {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+        height: $button--tab-height;
+        line-height: $button--tab-height;
+        min-width: $button--tab-height;
+        text-align: center;
+    }
+
+    &--formatting {
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &--header {
+        height: $header-height;
+        width: $header-height;
+        line-height: $header-height;
+        text-align: center;
+
+        > svg {
+            height: $header-height * 0.55;
+            width: $header-height * 0.55;
+        }
+    }
+}

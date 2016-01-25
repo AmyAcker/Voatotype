@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html class="theme--default">
+    {% include head.html %}
+    <body id="body" class="body">
+        {% include svg/sprite-all.html %}
+        {% include modules/layout/header.html %}
+        <div class="u-flex-grow">
+                {{ content }}
+        </div>
+        {% include modules/layout/footer.html %}
+        {% include modules/modals.html %}
+        {% include scripts-footer.html %}
+    </body>
+</html>

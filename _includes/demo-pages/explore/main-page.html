@@ -1,0 +1,29 @@
+<main class="main">
+
+    <div class="box box--page-section">
+
+        <ul class="list list--tabs">
+            <li><a href="#" class="button button--tab button--tab--active">Popular</a></li>
+            <li><a href="#" class="button button--tab button--tab--inactive">Active</a></li>
+            <li><a href="#" class="button button--tab button--tab--inactive">New</a></li>
+            <li><a href="#" class="button button--tab button--tab--inactive">Subscribed</a></li>
+            <li class="u-flex-grow"></li>
+        </ul>
+
+
+        <div class="box__expository u-margin">
+            Showing subverses ordered by number of subscribers.
+        </div>
+
+        {% for i in (1..25) %}
+        {% include modules/box/box--subverse.html %}
+        {% endfor %}
+
+
+        <ul class="list list--horizontal u-padding">
+            <li><a href="" class="button button--medium button--loud">&lsaquo; Prev.</a></li>
+            <li><a href="" class="button button--medium button--loud">Next &rsaquo;</a></li>
+        </ul>
+
+    </div>
+</main>

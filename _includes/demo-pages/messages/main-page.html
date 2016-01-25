@@ -1,0 +1,24 @@
+<main class="main">
+
+    <div class="box box--page-section">
+
+    <ul class="list list--tabs">
+        <li><a href="#" class="button button--tab button--tab--active">Inbox</a></li>
+        <li><a href="#" class="button button--tab button--tab--inactive">Unread</a></li>
+        <li><a href="#" class="button button--tab button--tab--inactive">Sent</a></li>
+        <li><a href="#" class="button button--tab button--tab--inactive">Compose</a></li>
+        <li class="u-flex-grow"></li>
+        <li><a href="#" class="button button--small button--loud">Mark as read</a></li>
+    </ul>
+
+    {% for i in (1..25) %}
+    {% include modules/box/box--private-message.html %}
+    {% endfor %}
+
+    <ul class="list list--horizontal u-padding">
+        <li><a href="" class="button button--medium button--loud">&lsaquo; Prev.</a></li>
+        <li><a href="" class="button button--medium button--loud">Next &rsaquo;</a></li>
+    </ul>
+
+    </div>
+</main>

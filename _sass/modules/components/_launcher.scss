@@ -1,0 +1,37 @@
+.launcher {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: $header-height;
+    width: 550px;
+    max-width: 100%;
+    padding: 10px;
+    max-height: calc(100vh - #{$header-height} - 30px);
+
+    .body_-launcher-is-open & {
+        display: block;
+    }
+
+    &__input {
+        flex: none;
+    }
+
+    &__list {
+        @extend .u-flex-row;
+        flex-wrap: wrap;
+        width: 100%;
+        overflow: auto;
+        max-height: calc(100vh - #{$header-height} - 90px);
+
+        > li > a {
+            display: block;
+            padding: 0 8px;
+            line-height: 30px;
+        }
+    }
+
+    &__submit {
+        position: fixed;
+        left: -9999px;
+    }
+}

@@ -1,0 +1,30 @@
+.input {
+    @extend .u-flex-row;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+
+    &__label {
+        @include no-selection;
+        @extend .u-flex-row;
+        align-items: center;
+        flex: none;
+        min-width: 160px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    &__input {
+        flex: 1;
+        min-width: 298px;
+    }
+
+    &__textarea {
+        margin: 10px 0;
+    }
+
+    &__select {
+        background: transparent;
+        padding: 5px;
+    }
+}

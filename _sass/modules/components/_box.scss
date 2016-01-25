@@ -1,0 +1,142 @@
+.box {
+    overflow: hidden;
+
+    &__body {
+        margin-top: 2px;
+    }
+
+    &__details {
+        margin-top: 1px;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__expository {
+        padding: 10px;
+    }
+
+    &__thumbnail {
+        flex: none;
+        height: 70px;
+        width: 70px;
+        display: block;
+        margin-right: 10px;
+
+        &--small {
+            height: 45px;
+            width: 45px;
+            margin-right: 5px;
+        }
+    }
+
+    &__main {
+        @extend .u-flex-column;
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    &--modal {
+        flex-direction: column;
+        max-width: 400px;
+        padding: 10px;
+        margin-top: calc(#{$header-height} + 5vh);
+        max-height: calc(100vh - #{$header-height} - 5vh);
+        overflow-y: auto;
+        display: none;
+
+        &_-is-open {
+            display: flex;
+        }
+
+        &__close-button > svg {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+    &--submission,
+    &--comment,
+    &--private-message,
+    &--subverse {
+        @extend .u-flex-column;
+
+        &__title {
+            font-size: 1.3rem;
+            margin: 0;
+
+            @include screen-768 {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &--private-message,
+    &--subverse {
+        padding: 10px;
+    }
+
+    &--submission {
+        padding: 10px 10px 10px 0;
+
+        &__vote-bar {
+            flex: none;
+            width: 4px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        &__main {
+            min-height: 7rem;
+            padding-right: 10px
+        }
+
+        &__image-expander {
+            margin: 0 10px;
+            line-height: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+
+            $transition: 0.25s linear;
+            transition: max-height $transition,
+                        margin $transition,
+                        opacity $transition;
+
+            img {
+                max-height: calc(100vh - 100px);
+                max-width: 100%;
+            }
+
+            .box--submission_-is-expanded & {
+                margin-top: 10px;
+                max-height: calc(100vh - 100px);
+                opacity: 1;
+            }
+        }
+    }
+
+    &--comment {
+        margin: 10px 0 10px 10px;
+
+        &__main {
+            padding-right: 10px;
+        }
+
+        &_-is-collapsed {
+            height: 2rem;
+
+            .vote-arrows {
+                height: 0;
+            }
+        }
+    }
+
+    &--page-section {
+        margin-top: 10px;
+        flex: none;
+    }
+
+}

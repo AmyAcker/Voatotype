@@ -1,0 +1,42 @@
+$transition: 0.1s linear;
+
+.sidebar {
+    @extend .u-flex-column;
+    flex: none;
+    z-index: 2;
+    top: $header-height;
+    right: -#{$sidebar-width + 10px};
+    width: $sidebar-width;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+    transition: right $transition;
+        position: fixed;
+
+    .sidebar_-is-open & {
+        right: 0;
+        overflow-y: auto;
+    }
+
+    @include screen-1024 {
+        position: static;
+        margin-left: 10px;
+        overflow: hidden;
+        max-height: none;
+    }
+}
+
+.page-actions,
+.main,
+.footer {
+    position: relative;
+    left: 0;
+    transition: left $transition;
+
+    .sidebar_-is-open & {
+        left: -#{$sidebar-width + 10px};
+    }
+
+    @include screen-1024 {
+        position: static;
+    }
+}

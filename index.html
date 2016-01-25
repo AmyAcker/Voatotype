@@ -1,0 +1,86 @@
+---
+layout: default
+title: Index
+sidebar: false
+---
+
+<div class="container container--main">
+
+    <main class="main">
+
+        <div class="box box--page-section u-padding">
+            <h2 class="box__title box--page-section__title">General notes</h2>
+            <div class="box__body box--page-section__body">
+                <p>
+                    Welcome to the Voat prototype, a.k.a. Voatotype.
+                </p>
+                <p>
+                    These pages are generated from <a href="https://github.com/mijowa/Voatotype/tree/gh-pages">this source</a>. Voatotype uses <a href="https://jekyllrb.com/">Jekyll</a> for basic templating functionality.
+                </p>
+                <p>
+                    Voatotype should work in the very latest versions of Firefox, Chrome, Safari, Opera, and Edge (including mobile versions of those browsers). To support many older versions, it needs vendor prefixes. It's best to do this with <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, which can be used with Visual Studio and other tools. It probably also needs additional work to support IE, due to the use of flexbox. It has not been tested whatsoever on IE.
+                </p>
+                <p>
+                    Most links on demo pages don't go anywhere. The header buttons (other than the launcher) don't yet do anything.
+                </p>
+                <p>
+                    I've only written a light theme so far, but it's very easy to add themes since all colour styles are in a <a href="https://github.com/mijowa/Voatotype/blob/gh-pages/_sass/themes/_default.scss">separate SCSS file</a>. In addition to night mode, I plan to make a high-contrast theme for accessibility.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="box box--page-section u-padding">
+            <h2 class="box__title box--page-section__title">The launcher</h2>
+            <div class="box__body body--page-section__body md">
+                <p>
+                    The launcher allows you to quickly navigate through your subscribed subverses &mdash; or, as shown here &mdash; the default subs for logged-out users.
+                </p>
+                <p>
+                    <strong>To open the launcher,</strong> you can click / touch the header Voat logo or type "v" on your keyboard.
+                </p>
+                <p>
+                    <strong>To close the launcher,</strong> click on the translucent page backdrop or hit "esc".
+                </p>
+                <p>
+                    <strong>To open the first link in the filtered list,</strong> hit "enter", or press the submit button on your on-screen mobile keyboard. "Shift + enter" goes directly to */new. "Ctrl + enter" opens a new tab.
+                </p>
+                <p>
+                    <strong>Current limitations:</strong> clicking on the Voat logo when the launcher is open will take the user home. This currently works, but indication of this feature should be more obvious. "Shift + enter" does not currently work with random / random NSFW, but it should. There should also be information in the launcher about how to use it, perhaps shown when a "?" icon is clicked.
+                </p>
+                <p>
+                    <strong>Licensing:</strong> the launcher uses the plugin <a href="https://github.com/awbush/jquery-fastLiveFilter">jQuery Fast Live Filter</a>, under the terms of the <a href="http://opensource.org/licenses/bsd-license.php">BSD 2-clause license</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="box box--page-section u-padding">
+
+            <h2 class="box__title box--page-section__title">Demo pages</h2>
+
+            <ul class="list list--vertical">
+                <li><a href="{{ site.baseurl }}/voat.co/">voat.co</a></li>
+                <li><a href="{{ site.baseurl }}/voat.co/v/SomeSubverse/">voat.co/v/SomeSubverse/</a></li>
+                <li><a href="{{ site.baseurl }}/voat.co/v/SomeSubverse/comments">voat.co/v/SomeSubverse/comments</a></li>
+                <li><a href="{{ site.baseurl }}/voat.co/user/AtkoItOut">voat.co/user/AtkoItOut</a> (needs work)</li>
+                <li><a href="{{ site.baseurl }}/voat.co/messaging/inbox">voat.co/messaging/inbox</a></li>
+                <li><a href="{{ site.baseurl }}/voat.co/account/manage">voat.co/account/manage</a></li>
+                <li><a href="{{ site.baseurl }}/voat.co/subverses/">voat.co/subverses/</a></li>
+            </ul>
+
+        </div>
+
+        <div class="box box--page-section u-padding">
+
+            <h2 class="box__title box--page-section__title">Demo modals</h2>
+
+            <ul class="list list--vertical">
+                <li><a href="#" class="jsOpenModal" data-open-modal="login">Log in</a></li>
+                <li><a href="#" data-open-modal="notEnoughCCP" class="jsOpenModal">Not enough CCP</a></li>
+            </ul>
+
+        </div>
+
+    </main>
+
+</div>

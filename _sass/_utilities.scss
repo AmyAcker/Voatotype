@@ -1,0 +1,52 @@
+$sides: top right bottom left;
+
+.u-margin {
+    margin: $standard-spacing;
+}
+
+.u-padding {
+    padding: $standard-spacing;
+}
+
+
+@each $side in $sides {
+
+    .u-margin-#{$side} {
+        margin-#{$side}: $standard-spacing;
+    }
+
+    .u-padding-#{$side} {
+        padding-#{$side}: $standard-spacing;
+    }
+}
+
+
+
+@each $size in $screen-sizes {
+    .u-hide-until-#{$size} {
+        @media screen and (max-width: #{$size - 1}px) {
+            display: none !important;
+        }
+    }
+
+    .u-hide-after-#{$size} {
+        @media screen and (min-width: #{$size}px) {
+            display: none !important;
+        }
+    }
+}
+
+
+
+.u-flex-row {
+    @include display--flex;
+}
+
+.u-flex-column {
+    @include display--flex;
+    flex-direction: column;
+}
+
+.u-flex-grow {
+    flex: 1 0 auto;
+}

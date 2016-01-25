@@ -1,0 +1,25 @@
+<main class="main">
+
+    <section class="box box--page-section">
+
+        <ul class="list list--tabs">
+            <li><a class="button button--tab button--tab--active">Hot</a></li>
+            <li><a class="button button--tab button--tab--inactive">New</a></li>
+            <li><a class="button button--tab button--tab--inactive">Top</a></li>
+            <li class="u-flex-grow"></li>
+            <li><a href="#" class="button button--small button--loud jsExpandAllSubmissions js-submissions-collapsed">Expand all</a></li>
+        </ul>
+
+        {% for i in (1..25) %}
+        {% include modules/box/box--submission.html %}
+        {% endfor %}
+
+        <ul class="list list--horizontal u-padding">
+            <li><a href="" class="button button--medium button--loud">&lsaquo; Prev.</a></li>
+            <li><a href="" class="button button--medium button--loud">Next &rsaquo;</a></li>
+            <li><a href="" class="button button--medium button--quiet">RSS</a></li>
+        </ul>
+
+    </section>
+
+</main>

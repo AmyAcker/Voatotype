@@ -1,0 +1,49 @@
+<header class="header" role="banner">
+    <div class="container container--header">
+
+        {% include modules/launcher.html %}
+        <h1 class="header__logo js-hover" id="header__logo">
+            <a href="{{ site.baseurl }}/">
+                <svg>
+                    <use xlink:href="#logo" width="70px"/>
+                </svg>
+            </a>
+        </h1>
+
+        <h2 class="header__page-title"><a href="#">{{ page.title }}</a></h2>
+
+        <a class="header__user-stats" href>AtkoItOut</a>
+        <a class="header__user-stats" title="SCP" href>314</a>
+        <a class="header__user-stats" title="CCP" href>1592</a>
+        <a class="header__user-stats" title="Total upvotes given" href>6535</a>
+
+        <a href="#" class="button button--header">
+            <span class="button__number button--header__number">9</span>
+
+            <svg width="25" height="25">
+                <use xlink:href="#icon-notifications"/>
+            </svg>
+
+        </a>
+
+        {% if page.sidebar %}
+        <a href="#" class="button button--header u-hide-after-1024 jsOpenSidebar">
+            <svg width="25" height="25">
+                <use xlink:href="#icon-info_outline"/>
+            </svg>
+        </a>
+        {% endif %}
+
+        <a href="#" class="button button--header u-hide-until-550">
+            <svg width="25" height="25">
+                <use xlink:href="#icon-search"/>
+            </svg>
+        </a>
+
+        <a href="#" class="button button--header">
+            <svg width="25" height="25">
+                <use xlink:href="#icon-more_vert"/>
+            </svg>
+        </a>
+    </div>
+</header>

@@ -1,0 +1,35 @@
+.vote-arrows {
+    @extend .u-flex-column;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    overflow: hidden;
+
+    &__arrow {
+        @extend .u-flex-column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 25px;
+    }
+
+    &__vote-count {
+        font-size: 1.1rem;
+    }
+
+    &--submission {
+        height: 70px;
+
+        &__arrow svg {
+            width: 20px;
+        }
+    }
+
+    &--comment {
+        height: 50px;
+
+        &__arrow > svg {
+            width: 15px;
+        }
+    }
+}

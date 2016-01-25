@@ -1,0 +1,38 @@
+.header {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    width: 100%;
+
+    &__logo > a {
+        width: 9rem;
+        padding: 14px 10px;
+        display: block;
+        margin-right: 10px;
+        flex: none;
+
+        svg {
+            height: 2.2rem;
+            width: 7rem;
+        }
+    }
+
+    &__page-title {
+        flex-grow: 1;
+        display: inline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: white; // Ellipsis color
+    }
+
+    &__user-stats {
+        display: none;
+        line-height: $header-height;
+        padding: 0 10px;
+
+        @include screen-768 {
+            display: block;
+        }
+    }
+}

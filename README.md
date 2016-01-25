@@ -1,1 +1,1 @@
-[mijowa.github.io/Voatotype/](https://mijowa.github.io/Voatotype/)
+The branches `master` and `gh-pages` are kept identical.

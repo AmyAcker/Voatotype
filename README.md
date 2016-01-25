@@ -1,1 +1,1 @@
-The branches `master` and `gh-pages` are kept identical.
+The branches `master` and `gh-pages` should be kept identical.

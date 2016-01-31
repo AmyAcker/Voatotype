@@ -225,6 +225,11 @@ $(document).ready(function () {
 
     resetLauncher();
 
+});
 
 
+// Give <html> a class on DOM ready.
+// Useful for styling CSS transitions.
+$(document).ready(function () {
+    $("html").addClass("DOM-ready");
 });

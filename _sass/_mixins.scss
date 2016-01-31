@@ -1,5 +1,10 @@
 // Prefixing mixins should be removed and Autoprefixer used instead.
 
+@mixin screen-550 {
+    @media screen and (min-width: 549px) {
+        @content;
+    }
+}
 
 @mixin screen-768 {
     @media screen and (min-width: 767px) {

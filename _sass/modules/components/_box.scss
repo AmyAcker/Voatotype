@@ -88,6 +88,10 @@
             margin-right: 10px;
         }
 
+        &__thumbnail {
+            @extend .u-hide-until-550;
+        }
+
         &__main {
             min-height: 7rem;
             padding-right: 10px

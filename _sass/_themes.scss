@@ -3,6 +3,11 @@
 // @import "themes/high-contrast";
 
 
-.theme--default {
-    @import "themes/default";
+.theme--light {
+    @import "themes/light";
+
+}
+
+.theme--dark {
+    @import "themes/dark";
 }

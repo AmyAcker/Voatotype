@@ -1,208 +1,182 @@
-// TABLE OF CONTENTS ////////////
+// Light theme
 
-    // Variables
+$gray-1: #222;
+$gray-2: #444;
+$gray-3: #666;
+$gray-4: #888;
+$gray-5: #aaa;
+$gray-6: #ccc;
+$gray-7: #eee;
 
-    // Base
+$blue:    #2D4AA1;
+$purple:  #741799;
+$orange:  #BD4F40;
+$yellow:  #FFC231;
 
-    // Layout
-        // launcher
-        // header
-        // footer
+$light-blue:     lighten($blue,    15%);
+$light-purple:   lighten($purple,  15%);
+$light-orange:   lighten($orange,  15%);
+$light-yellow:   lighten($yellow,  15%);
 
-    // Components
-        // box
-        // list
-        // input
-        // vote-arrows
-        // button
-        // toggle
+$dark-blue:       darken($blue,    15%);
+$dark-purple:     darken($purple,  15%);
+$dark-orange:     darken($orange,  15%);
+$dark-yellow:     darken($yellow,  15%);
 
-//////////////////////////////////
-
-
-
-// Variables
-
-$link-color: #00e;
-$link-color-hover: lighten($link-color, 15%);
-$link-color-visited: #551a8b;
-$link-color-visited-hover: lighten($link-color-visited, 15%);
-$header-color: black;
-$page-section-background: white;
 
 $upvote-color: #63C5FB;
 $downvote-color: #a08fff;
-$lightgray: transparentize(black, 0.93);
-$mediumgray: transparentize(black, 0.8);
-$darkgray: transparentize(black, 0.6);
-$red: #a00;
-$border-color: $mediumgray;
-$accent-color: steelblue;
-$accent-color-hover: darken($accent-color, 15%);
 
+$border-color: $gray-6;
 $border: 1px solid $border-color;
 
-$body-background: #eee;
-$content-background: white;
+.launcher {
+    background: $gray-1;
+    border: 1px solid $gray-1;
+    border-top: 0;
 
+    &__input:focus {
+        border-color: white !important;
+        color: white;
+    }
+}
 
-// Base
+.body {
+    background: $gray-7;
+    color: black;
 
-body {
-    background: $body-background;
+    &_-modal-is-open > .body__backdrop,
+    &_-launcher-is-open > .body__backdrop {
+        background: transparentize($gray-7, 0.05);
+    }
 }
 
 a {
-    color: $link-color;
+    color: $blue;
 
+    &:active,
     &:hover {
-        color: $link-color-hover;
+        color: $light-blue;
+        text-decoration: none;
+
+        &:visited {
+            color: $light-purple;
+        }
     }
 
     &:visited {
-        color: $link-color-visited;
-
-        &:hover {
-            color: $link-color-visited-hover;
-        }
+        color: $purple;
     }
-}
-
-table {
-
-}
-
-thead {
-    border-bottom: $border;
 }
 
 .username,
 .subverse {
-	font-family: "DejaVu Sans Mono";
-	font-style: normal;
-}
+    font-style: normal;
+    color: $blue !important;
 
-
-// Layout
-
-
-
-.body_-modal-is-open > .body__backdrop {
-    background: transparentize(white, 0.1);
-}
-
-.body_-launcher-is-open {
-
-    .body__backdrop {
-        background: transparentize(white, 0.1);
-    }
-
-    .header__logo path {
-        fill: #eee;
-    }
-}
-
-.header {
-    background: $header-color;
-    color: white;
-
-    a:not(.button) {
-        color: white;
+    &:focus,
+    &:hover {
+        color: $light-blue !important;
         text-decoration: none;
-
-        &:hover {
-            color: $upvote-color;
-        }
     }
 }
 
+hr {
+    background: $border-color;
+}
 
-.launcher {
-    background: #333;
-    color: white;
+.input {
 
-    &__input {
-        color: white;
+    &__input,
+    &__select,
+    &__textarea {
+        background: transparent;
+        border: $border;
+        color: black;
 
         &:focus {
-            border-color: #bbb !important;
+            border-color: $light-orange;
         }
+    }
+
+    &__select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 }
 
 
-
-
-
-.footer {
-    background: black;
-    color: white;
+.header {
+    background: $gray-1;
 
     a {
-        color: white;
+        color: $gray-7;
+        text-decoration: none;
+        outline: none;
 
+        &:focus,
         &:hover {
-            color: $upvote-color;
+            color: $upvote-color !important;
         }
+    }
+
+    svg {
+        fill: $gray-7;
+    }
+
+    &__logo a:focus svg path,
+    &__logo a:hover svg path {
+        fill: $upvote-color !important;
     }
 }
 
-
-// Components
 
 .box {
 
     &__details {
-        color: #444;
+        color: $gray-3;
         font-style: italic;
     }
 
     &__expository {
-        border-left: 3px solid #aaa;
-        background: #f5f5f5;
+        color: $gray-2;
+        font-style: italic;
+        background: $gray-7;
+        border-left: 4px solid $gray-3
     }
 
     &__thumbnail {
-        background: #111;
+        background: $gray-1;
     }
 
-    &--modal,
+    &--modal {
+        background: white;
+        border: 1px solid $gray-5;
+    }
+
     &--page-section {
-        background: $page-section-background;
+        background: white;
         border: $border;
-
-        &__title {
-            // border-bottom: $border;
-        }
-    }
-
-    &--subverse,
-    &--private-message,
-    &--submission {
-        border-bottom: $border;
     }
 
     &--submission {
-
-        &__thumbnail {
-            background: #333;
-        }
 
         &__vote-bar {
             background: $downvote-color;
 
             > div {
                 background: $upvote-color;
-                border-bottom: 1px solid $page-section-background;
+                border-bottom: 1px solid white;
             }
         }
     }
 
     &--comment {
-        border-left: 2px solid $border-color;
+        border-left: 1px solid $gray-6;
 
         &:hover {
-            border-color: #999;
+            border-color: $dark-blue;
         }
     }
 }
@@ -214,228 +188,173 @@ thead {
     }
 }
 
-.input {
-
-    &__input,
-    &__select,
-    &__textarea {
-        background: none;
-        border: $border;
-
-        &:focus {
-            border-color: $accent-color;
-        }
-    }
-
-    &--checkbox,
-    &--radio {
-
-
-        &__fake-checkbox,
-        &__fake-radio {
-            border: 0.1rem solid $darkgray;
-
-            > div {
-                background: $accent-color;
-            }
-        }
-
-        &__label:hover {
-
-            &,
-            & > .input__fake-checkbox {
-
-                color: $accent-color;
-                border-color: $accent-color;
-            }
-        }
-
-        &__true-checkbox:focus {
-
-            ~ label {
-                color: $accent-color;
-
-                & > div {
-                    border-color: $accent-color;
-                }
-            }
-        }
-
-    }
-}
-
 .vote-arrows {
-    fill: transparentize(black, 0.6);
 
-    &__arrow--up:hover {
-        fill: $upvote-color;
-    }
+    &__arrow {
+        outline: none;
 
-    &__arrow--down:hover {
-        fill: $downvote-color;
-    }
+        svg {
+            fill: $gray-4;
+        }
 
-    &__arrow--disabled {
-        &,
-        &:hover {
-            fill: #ddd;
-            cursor: not-allowed;
-            stroke: red !important;
-            stroke-width: 1px !important;
+        &--up:focus svg,
+        &--up:hover svg {
+            fill: $upvote-color;
+        }
 
+        &--down:focus svg,
+        &--down:hover svg {
+            fill: $downvote-color;
         }
     }
 }
 
 .button {
+    outline: none;
 
     &--loud {
+        background: $orange;
+        color: white !important;
 
-        &,
-        &:visited {
-            background: $accent-color;
-            color: white;
-        }
-
-        &:hover,
-        &:visited:hover {
-            background: $accent-color-hover;
-            color: white;
+        &:focus,
+        &:hover {
+            background: $dark-orange;
         }
     }
 
     &--quiet {
+        background: $gray-7;
+        color: black !important;
 
-        &,
-        &:visited {
-            background: $lightgray;
-            color: black;
-        }
-
-        &:hover,
-        &:visited:hover {
-            background: $accent-color-hover;
-            color: white;
-        }
-    }
-
-    &--launcher {
-        &,
-        &:visited {
-            color: black;
-        }
-
-        &:hover,
-        &:visited:hover {
-            background: $lightgray;
-            color: black;
+        &:focus,
+        &:hover {
+            background: $gray-3;
+            color: white !important;
         }
     }
 
     &--serious {
-        background: $red;
-        color: white;
+        @extend .button--loud;
 
+        &:focus,
         &:hover {
-            background: darken($red, 10%);
+            background: #D10076;
+            color: $gray-7 !important;
         }
     }
 
     &--disabled {
-
-        &,
-        &:hover,
-        &:visited,
-        &:visited:hover {
-            background: #eee;
-            color: #333;
-            cursor: not-allowed;
-        }
-    }
-
-    &--tab {
-        &,
-        &:hover,
-        &:visited,
-        &:visited:hover {
-            color: black;
-        }
-
-        &--active {
-            border-bottom: 4px solid $accent-color;
-        }
-
-        &--inactive {
-
-            &:hover {
-                border-bottom: 4px solid $mediumgray;
-            }
-        }
-
-        &--disabled {
-            &,
-            &:hover,
-            &:visited,
-            &:visited:hover {
-                color: #777;
-                cursor: not-allowed;
-                border-color: transparent;
-            }
-        }
+        background: $gray-7;
+        color: $gray-3 !important;
+        cursor: not-allowed;
     }
 
     &--header {
 
-        svg {
-            fill: white;
-        }
-
         &__number {
             font-weight: bold;
-            background: gold;
-            color: $header-color;
-            border: 2px solid $header-color;
+            background: $yellow;
+            color: $gray-1;
+            border: 2px solid $gray-1;
+        }
+
+        &:focus svg,
+        &:hover svg {
+            fill: $upvote-color;
         }
     }
 
-    &--header:hover svg {
-        fill: $upvote-color;
+    &--tab {
+        color: $gray-1 !important;
+
+        &--inactive:focus,
+        &--inactive:hover {
+            border-bottom: 4px solid $gray-6;
+        }
+
+        &--active {
+            border-bottom: 4px solid $orange;
+
+            &:focus,
+            &:hover {
+                border-color: $dark-orange;
+            }
+        }
     }
 
-    &--formatting {
-        fill: #333;
 
-        &:hover {
-            fill: $accent-color;
+    &--formatting {
+        svg {
+            fill: $gray-5;
+        }
+
+        &:focus svg,
+        &:hover svg {
+            fill: $dark-orange;
         }
     }
 }
 
 .toggle {
+    // The "fake" toggle is the part the visible part.
+
+    // The "real" toggle is invisible and its states
+    // (e.g. :checked and :focus) are used to apply
+    // styling to the fake toggle.
+
+    // This results in a nicer looking toggle while
+    // fully maintaining accessibility.
 
     &__checkbox-fake,
     &__radio-fake {
-        border: 1px solid $darkgray;
-    }
+            // Base border of the fake checkbox
+            border: $border;
+        }
 
     &__checkbox-real,
     &__radio-real {
 
-        &:hover + label,
-        &:focus + label {
-            color: $accent-color;
+        &:checked + label > .toggle__checkbox-fake,
+        &:checked + label > .toggle__radio-fake {
+            // Border color of the fake checkbox when :checked
+            border-color: $light-blue;
 
-            > .toggle__checkbox-fake {
-                border-color: $accent-color;
+            &::before {
+                // Background of the fake checkbox when :checked
+                background: $light-blue;
             }
         }
 
-        &:checked + label > .toggle__checkbox-fake,
-        &:checked + label > .toggle__radio-fake {
-            border-color: $accent-color;
+        &:focus + label {
+            // Color of the label text when checkbox has :focus
+            // (for navigating with tab)
+            color: $blue;
+
+            > .toggle__checkbox-fake,
+            > .toggle__radio-fake {
+                // Border color of the fake checkbox when checkbox has :focus
+                border-color: $blue;
+
+                &::before {
+                    // Background of the fake checkbox when checkbox has :focus
+                    background: $blue;
+                }
+            }
+        }
+    }
+
+    &__label:hover {
+        // Color of the label text when :hovered over
+        color: $blue;
+
+        > .toggle__checkbox-fake,
+        > .toggle__radio-fake {
+            // Border color of fake toggle when label is :hovered over
+            border-color: $blue !important;
 
             &::before {
-                background: $accent-color;
+                // Background of fake toggle when label is :hovered over
+                background: $blue !important;
             }
         }
     }

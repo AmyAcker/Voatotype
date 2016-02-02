@@ -1,3 +1,25 @@
+// Linux fonts should be specified first in the stacks.
+// Otherwise, some systems will use Windows / MacOS
+// font names as aliases for less appropriate fonts.
+
+$font-stack-sans:	"DejaVu Sans",					// Linux
+					"DejaVu LGC Sans",				// Linux
+					"Bitstream Vera Sans",			// Linux
+					"Verdana",						// Windows, Mac OS, iOS
+					"Noto Sans",					// Android
+					sans-serif;
+
+$font-stack-mono:	"DejaVu Sans Mono",				// Linux
+					"DejaVu LGC Sans Mono",			// Linux
+					"Bitstream Vera Sans Mono",		// Linux
+					"Menlo",						// Mac OS, iOS
+					"Lucida Console",				// Windows
+					monospace;
+
+$base-font-size:  1.2rem;
+$scale: 1.2;
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -15,75 +37,66 @@ html {
 body {
 	padding-top: 5rem;
 	min-height: calc(100vh + 1px); // force scroll bars on short pages
-	font: 1.2rem/1.5 "DejaVu Sans", sans-serif;
+	font-family: $font-stack-sans;
+	font-size: $base-font-size;
+	line-height: 1.5;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-button {
-	font: 1rem/0 "DejaVu Sans", sans-serif;
+h1 {
+	font-size: $base-font-size * $scale * $scale * $scale;
 }
 
-svg {
-	display: block;
+h2 {
+	font-size: $base-font-size * $scale * $scale;
 }
 
-ul {
-	list-style: none;
+h3 {
+	font-size: $base-font-size * $scale;
 }
 
+h4,
+h5,
+h6 {
+	font-size: $base-font-size / $scale;
+}
+
+th,
+td,
+input,
+textarea,
+select {
+	border-width: 1px;
+	border-style: solid;
+}
+
+abbr {
+	border-bottom-width: 1px;
+	border-style: dotted;
+	text-decoration: none;
+}
+
+
+p,
+ul,
+ol,
+pre,
+blockquote {
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+b,
 strong {
     font-weight: bold;
 }
 
+i,
 em {
     font-style: italic;
-}
-
-p:not(:last-of-type) {
-    margin-bottom: 1rem;
-}
-
-hr {
-	width: 100%;
-	height: 0.1rem;
-	background: #aaa;
-	margin: 1.5rem 0;
-}
-
-code {
-    font-family: "DejaVu Sans Mono";
-    display: inline-block;
-    padding: 0 2px;
-
-    pre > & {
-        width: 100%;
-        padding: 5px 0 5px 10px;
-        overflow: auto;
-        max-height: 66vh;
-    }
-}
-
-blockquote {
-    margin: 10px 0 10px 15px;
-    padding: 10px 0;
-    padding-left: 10px;
-}
-
-table {
-    border-collapse: collapse;
-    overflow-x: auto;
-	min-width: 280px;
-}
-
-th {
-    @extend .box__title;
-    text-align: left;
-}
-
-th,
-td {
-    padding-right: 10px;
-	line-height: 2;
 }
 
 sup {
@@ -96,13 +109,74 @@ sub {
     font-size: smaller;
 }
 
+ul {
+    list-style: inside square;
+}
+
+ol {
+    list-style: inside decimal;
+}
+
+pre,
+blockquote {
+    padding: 10px;
+    padding-left: 14px;
+    overflow: auto;
+}
+
+pre {
+    display: flex;
+}
+
+svg,
+blockquote {
+    display: block;
+}
+
+pre,
+code {
+	font-family: $font-stack-mono;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+    margin: 1.5rem 0;
+}
+
+table {
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+th {
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.5rem 1rem;
+	line-height: 2;
+}
+
 input,
 textarea {
-	padding: 5px;
+	padding: 0.5rem;
 	width: 100%;
 
 	&:focus {
-		@include no-placeholder;
+		&::-webkit-input-placeholder {
+	       color: transparent;
+	    }
+
+	    &::-moz-placeholder {
+	       color: transparent;
+	    }
+
+	    &:-ms-input-placeholder {
+	       color: transparent;
+	    }
 	}
 }
 
@@ -112,8 +186,8 @@ textarea {
 	height: 10rem;
 }
 
-abbr {
-	text-decoration: none;
-	border-bottom: 1px dotted #555;
-
+[href="#s"]::after { // Spoiler
+    content: attr(title);
+    display: inline-block;
+    padding: 0 0.5rem;
 }

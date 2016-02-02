@@ -8,9 +8,9 @@ sidebar: false
     <main class="main">
         <div class="box box--page-section u-padding">
 
-            <p>Voat Markdown cheat sheet</p>
+            <h2>Voat Markdown cheat sheet</h2>
             <p>
-                We support <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax in comments and self posts.
+                We support <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax.
             <p>
                 Here are some examples of syntax that you can use to make your messages and comments look better.
             </p>
@@ -24,11 +24,11 @@ sidebar: false
                 <tbody class="md">
                     <tr>
                         <td>**bold**</td>
-                        <td><b>bold</b></td>
+                        <td><strong>bold</strong></td>
                     </tr>
                     <tr>
                         <td>*italics*</td>
-                        <td><i>italics</i></td>
+                        <td><em>italics</em></td>
                     </tr>
                     <tr>
                         <td>[A website](http://example.com)</td>
@@ -36,11 +36,11 @@ sidebar: false
                     </tr>
                     <tr>
                         <td>
-                            > Quoting is awesome.<br />
-                            > Yes, quoting is awesome.<br />
+                            > Quoting is awesome.<br>
+                            > Yes, quoting is awesome.<br>
                         </td>
                         <td>
-                            <blockquote class="small">
+                            <blockquote>
                                 <p>
                                     Quoting is awesome.
                                 </p>
@@ -52,22 +52,27 @@ sidebar: false
                     </tr>
                     <tr>
                         <td>
-                            ~~~<br />
-                            Code block<br />
+                            ~~~<br>
+                            Some code<br>
+                            More code<br>
+                            Another line of code<br>
                             ~~~
                         </td>
                         <td>
-                            <pre><code>Code block</code></pre>
+                            <pre>
+                                <code>Code block<br>More code<br>Another line of code</code>
+
+                            </pre>
                         </td>
                     </tr>
     				<tr>
     					<td>
-    						* Anna<br />
-    						* Bob<br />
+    						* Anna<br>
+    						* Bob<br>
     						* Charlie
     					</td>
     					<td>
-    						<ul style="list-style-type: disc;">
+    						<ul>
     							<li>Anna</li>
     							<li>Bob</li>
     							<li>Charlie</li>
@@ -76,13 +81,13 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						1. Make a comment<br />
-    						2. Use Markdown<br />
-    						3. ???<br />
+    						1. Make a comment<br>
+    						2. Use Markdown<br>
+    						3. ???<br>
     						4. Profit
     					</td>
     					<td>
-    						<ol style="list-style-type: decimal;">
+    						<ol>
     							<li>Make a comment</li>
     							<li>Use Markdown</li>
     							<li>???</li>
@@ -92,10 +97,10 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						Paragraph 1<br />
-    						<br />
-    						----------<br />
-    						<br />
+    						Paragraph 1<br>
+    						<br>
+    						----------<br>
+    						<br>
     						Paragraph 2
     					</td>
     					<td>
@@ -106,32 +111,32 @@ sidebar: false
     				</tr>
                     <tr>
                         <td>
-                            Fruit    |Color<br />
-                            ---------|----------<br />
-                            Apples   |Red<br />
-                            Pears	 |Green<br />
-                            Bananas  |Yellow<br />
+                            Goat Breeds | Country of Origin<br>
+                            ---------|-----------<br>
+                            Appenzell | Switzerland<br>
+                            Bilberry  | Ireland<br>
+                        	Poitou   | France
                         </td>
                         <td>
-                            <table class="table-condensed table-bordered">
+                            <table>
                                 <thead>
                                     <tr>
-                                        <th>Fruit</th>
-                                        <th>Color</th>
+                                        <th>Goat Breeds</th>
+                                        <th>Country of Origin</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Apples</td>
-                                        <td>Red</td>
+                                        <td>Appenzell</td>
+                                        <td>Switzerland</td>
                                     </tr>
                                     <tr>
-                                        <td>Pears</td>
-                                        <td>Green</td>
+                                        <td>Bilberry</td>
+                                        <td>Ireland</td>
                                     </tr>
                                     <tr>
-                                        <td>Bananas</td>
-                                        <td>Yellow</td>
+                                        <td>Poitou</td>
+                                        <td>France</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -147,7 +152,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						#Heading Level 1
+    						# Heading Level 1
     					</td>
     					<td>
     						<h1>Heading Level 1</h1>
@@ -155,7 +160,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						##Heading Level 2
+    						## Heading Level 2
     					</td>
     					<td>
     						<h2>Heading Level 2</h2>
@@ -163,7 +168,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						###Heading Level 3
+    						### Heading Level 3
     					</td>
     					<td>
     						<h3>Heading Level 3</h3>
@@ -171,7 +176,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						####Heading Level 4
+    						#### Heading Level 4
     					</td>
     					<td>
     						<h4>Heading Level 4</h4>
@@ -179,7 +184,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						#####Heading Level 5
+    						##### Heading Level 5
     					</td>
     					<td>
     						<h5>Heading Level 5</h5>
@@ -187,7 +192,7 @@ sidebar: false
     				</tr>
     				<tr>
     					<td>
-    						######Heading Level 6
+    						###### Heading Level 6
     					</td>
     					<td>
     						<h6>Heading Level 6</h6>

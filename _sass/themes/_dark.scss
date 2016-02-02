@@ -3,14 +3,35 @@
 // https://github.com/atom/one-dark-ui
 // https://github.com/atom/one-dark-syntax
 
+// Table of contents
 
-$gray-1: #181a1f; // Darkest gray         (One Dark borders)
-$gray-2: #21252b; //                      (One Dark side panel)
-$gray-3: #282c34; //                      (One Dark main background)
-$gray-4: #3f4552; //
-$gray-5: #606a7d; //
-$gray-6: #9da5b4; //
-$gray-7: #dee2f8; // Lightest gray        (One Dark text)
+	// Variables
+
+	// Base styles
+
+	// Layout
+		// body
+		// header
+
+	// Components
+		// launcher
+		// box
+		// list
+		// input
+		// vote-arrows
+		// button
+		// toggle
+
+
+// Variables
+
+$gray-1: #181a1f;
+$gray-2: #21252b;
+$gray-3: #282c34;
+$gray-4: #3f4552;
+$gray-5: #606a7d;
+$gray-6: #9da5b4;
+$gray-7: #dee2f8;
 
 $blue:   #2d63d0;
 $teal:   #56b6c2;
@@ -43,20 +64,39 @@ $downvote-color: #a08fff;
 $border-color: $gray-1;
 $border: 1px solid $border-color;
 
-.launcher {
-    background: $gray-3;
-    border: 1px solid $gray-4;
-    border-top: 0;
+
+// Base styles
+
+::-moz-selection {
+    background: $gray-6;
+    color: $gray-1;
 }
 
-.body {
-    background: $gray-2;
-    color: $gray-7;
+::selection {
+    background: $gray-6;
+    color: $gray-1;
+}
 
-    &_-modal-is-open > .body__backdrop,
-    &_-launcher-is-open > .body__backdrop {
-        background: transparentize($gray-1, 0.05);
-    }
+th,
+td,
+abbr,
+input,
+textarea,
+select {
+	border-color: $border-color;
+}
+
+hr {
+	background: $border-color;
+}
+
+pre,
+blockquote {
+    border-left: 0.4rem solid $gray-5;
+}
+
+code {
+    color: $green;
 }
 
 a {
@@ -75,42 +115,44 @@ a {
     &:visited {
         color: $purple;
     }
-}
 
-.username,
-.subverse {
-    font-style: normal;
-    color: $light-blue !important;
+    &.username,
+    &.subverse {
+        font-family: $font-stack-mono;
+        font-style: normal;
+        color: $light-blue !important;
 
-    &:focus,
-    &:hover {
-        color: $blue !important;
-        text-decoration: none;
-    }
-}
-
-hr {
-    background: $gray-1;
-}
-
-.input {
-
-    &__input,
-    &__select,
-    &__textarea {
-        background: transparent;
-        border: $border;
-        color: $gray-7;
-
-        &:focus {
-            border-color: $gray-6;
+        &:focus,
+        &:hover {
+            color: $blue !important;
+            text-decoration: none;
         }
     }
 
-    &__select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+    &[href="#s"] { // Spoilers
+
+	    &::after {
+	        color: $gray-4;
+	        background: $gray-4;
+	    }
+
+		&:focus::after,
+	    &:hover::after {
+	        color: white;
+	    }
+	}
+}
+
+
+// Layout
+
+.body {
+    background: $gray-2;
+    color: $gray-7;
+
+    &_-modal-is-open > .body__backdrop,
+    &_-launcher-is-open > .body__backdrop {
+        background: transparentize($gray-1, 0.05);
     }
 }
 
@@ -139,6 +181,14 @@ hr {
     }
 }
 
+
+// Components
+
+.launcher {
+    background: $gray-3;
+    border: 1px solid $gray-4;
+    border-top: 0;
+}
 
 .box {
 
@@ -195,6 +245,27 @@ hr {
     }
 }
 
+.input {
+
+    &__input,
+    &__select,
+    &__textarea {
+        background: transparent;
+        border: $border;
+        color: $gray-7;
+
+        &:focus {
+            border-color: $gray-6;
+        }
+    }
+
+    &__select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
 .vote-arrows {
 
     &__arrow {
@@ -235,17 +306,7 @@ hr {
 
         &:focus,
         &:hover {
-            @extend .button--loud;
-        }
-    }
-
-    &--serious {
-        @extend .button--loud;
-
-        &:focus,
-        &:hover {
-            background: #800;
-            color: $gray-7 !important;
+            background: $gray-5;
         }
     }
 

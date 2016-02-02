@@ -1,5 +1,28 @@
 // Light theme
 
+// Table of contents
+
+	// Variables
+
+	// Base styles
+
+	// Layout
+		// body
+		// header
+
+	// Components
+		// launcher
+		// box
+		// list
+		// input
+		// vote-arrows
+		// button
+		// toggle
+
+
+
+// Variables
+
 $gray-1: #222;
 $gray-2: #444;
 $gray-3: #666;
@@ -12,16 +35,19 @@ $blue:    #2D4AA1;
 $purple:  #741799;
 $orange:  #BD4F40;
 $yellow:  #FFC231;
+$green:   #227322;
 
 $light-blue:     lighten($blue,    15%);
 $light-purple:   lighten($purple,  15%);
 $light-orange:   lighten($orange,  15%);
 $light-yellow:   lighten($yellow,  15%);
+$light-green:    lighten($green,   15%);
 
 $dark-blue:       darken($blue,    15%);
 $dark-purple:     darken($purple,  15%);
 $dark-orange:     darken($orange,  15%);
 $dark-yellow:     darken($yellow,  15%);
+$dark-green:      darken($green,   15%);
 
 
 $upvote-color: #63C5FB;
@@ -30,25 +56,30 @@ $downvote-color: #a08fff;
 $border-color: $gray-6;
 $border: 1px solid $border-color;
 
-.launcher {
-    background: $gray-1;
-    border: 1px solid $gray-1;
-    border-top: 0;
 
-    &__input:focus {
-        border-color: white !important;
-        color: white;
-    }
+
+// Base styles
+
+th,
+td,
+abbr,
+input,
+textarea,
+select {
+	border-color: $border-color;
 }
 
-.body {
-    background: $gray-7;
-    color: black;
+hr {
+	background: $border-color;
+}
 
-    &_-modal-is-open > .body__backdrop,
-    &_-launcher-is-open > .body__backdrop {
-        background: transparentize($gray-7, 0.05);
-    }
+pre,
+blockquote {
+    border-left: 0.4rem solid $gray-2;
+}
+
+code {
+    color: $green;
 }
 
 a {
@@ -67,45 +98,46 @@ a {
     &:visited {
         color: $purple;
     }
+
+	&.username,
+	&.subverse {
+		font-family: $font-stack-mono;
+	    font-style: normal;
+	    color: $blue !important;
+
+	    &:focus,
+	    &:hover {
+	        color: $light-blue !important;
+	        text-decoration: none;
+	    }
+	}
+
+	&[href="#s"] { // Spoilers
+
+	    &::after {
+	        color: $gray-2;
+	        background: $gray-2;
+	    }
+
+		&:focus::after,
+	    &:hover::after {
+	        color: white;
+	    }
+	}
 }
 
-.username,
-.subverse {
-    font-style: normal;
-    color: $blue !important;
 
-    &:focus,
-    &:hover {
-        color: $light-blue !important;
-        text-decoration: none;
+// Layout
+
+.body {
+    background: $gray-7;
+    color: black;
+
+    &_-modal-is-open > .body__backdrop,
+    &_-launcher-is-open > .body__backdrop {
+        background: transparentize($gray-7, 0.05);
     }
 }
-
-hr {
-    background: $border-color;
-}
-
-.input {
-
-    &__input,
-    &__select,
-    &__textarea {
-        background: transparent;
-        border: $border;
-        color: black;
-
-        &:focus {
-            border-color: $light-orange;
-        }
-    }
-
-    &__select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-}
-
 
 .header {
     background: $gray-1;
@@ -131,6 +163,19 @@ hr {
     }
 }
 
+
+// Components
+
+.launcher {
+    background: $gray-1;
+    border: 1px solid $gray-1;
+    border-top: 0;
+
+    &__input:focus {
+        border-color: white !important;
+        color: white;
+    }
+}
 
 .box {
 
@@ -188,6 +233,26 @@ hr {
     }
 }
 
+.input {
+
+    &__input,
+    &__select,
+    &__textarea {
+        background: transparent;
+        color: black;
+
+        &:focus {
+            border-color: $light-orange;
+        }
+    }
+
+    &__select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
 .vote-arrows {
 
     &__arrow {
@@ -230,16 +295,6 @@ hr {
         &:hover {
             background: $gray-3;
             color: white !important;
-        }
-    }
-
-    &--serious {
-        @extend .button--loud;
-
-        &:focus,
-        &:hover {
-            background: #D10076;
-            color: $gray-7 !important;
         }
     }
 
